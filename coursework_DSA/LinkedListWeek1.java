@@ -16,11 +16,11 @@ package coursework_DSA;
 import java.util.*;
 import java.util.LinkedList;
 
-public class linkedlist {
+public class LinkedListWeek1 {
     Queue<Integer> list;
     int totalSize;
 
-    linkedlist(LinkedList[] a) {
+    LinkedListWeek1(LinkedList[] a) {
         // int size = a.length;
         int whole = 0;
         for (int i = 0; i < a.length; i++) {
@@ -74,7 +74,7 @@ public class linkedlist {
         c.add(9);
 
         LinkedList[] list = { a, b, c };
-        linkedlist medianFinder = new linkedlist(list);
+        LinkedListWeek1 medianFinder = new LinkedListWeek1(list);
         int[] requiredArr = medianFinder.queueItterator();
         int median = (requiredArr.length + 1) / 2;
         System.out.println(requiredArr.length);
