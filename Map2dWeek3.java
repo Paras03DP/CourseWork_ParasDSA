@@ -1,4 +1,3 @@
-package coursework_DSA;
 // Week3
 // you are provided coordinates of houses in 2D map and write an algorithm that will print
 // optimal path to construct a road connecting all houses with minimum cost. cost between 

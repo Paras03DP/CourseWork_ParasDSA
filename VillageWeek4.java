@@ -1,4 +1,3 @@
-package coursework_DSA;
 // Week4
 // In a certain city there are x number of villages represented in an array where a[i] 
 // represents their grade. Each village is assigned grades based on their population count. 
@@ -9,8 +8,7 @@ package coursework_DSA;
 // input: grades = [5,2,6]
 // output:6
 // explain you can distribute first 2nd village 1 container and 1st village 2 container and 
-// third village 3 container
-
+// third village 3 container.
 
 
 

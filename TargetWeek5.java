@@ -1,6 +1,4 @@
-package coursework_DSA;
-// Week 5
-
+//Week 5
 // you are provided with an array A [] containing set of different words in the form of string 
 // and you are provided with targeted word, 
 // return length of subset s from set A required to from targeted word by using 

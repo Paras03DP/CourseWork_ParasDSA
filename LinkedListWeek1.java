@@ -1,4 +1,3 @@
-package coursework_DSA;
 // Week 1
 // You are provided with kth linked list. Write an algorithm to find median of merged linked 
 // list in sorter order.
@@ -8,7 +7,7 @@ package coursework_DSA;
 // output: 5
 // Explanation:
 // after merging above kth linked list i.e three list in sorted order linked list become, 
-// [2,2,3,4,5,5,6,7,7,9,9,10] 
+// [2,2,3,4,5,5,6,7,7,9,9,10]
 
 
 
