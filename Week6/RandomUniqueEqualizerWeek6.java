@@ -10,140 +10,150 @@ package Week6;
 // Explanation: THIS+IS+TOO=FUNNY
 //  9274+74+988==10336 as T=9, H=2, I=7, S=4, 0=8 
 
-import java.util.HashMap;
+/*
+ * word represents different digit from 0 to 9 and each
+* different characters must represent different digits. return if sum of number represented on array equals to the number
+represented by targeted word, otherwise return false. Input: words = ["THIS","IS","TOO"], result = "FUNNY" Output: true
+Explanation: THIS+IS+TOO=FUNNY
+9274+74+988==10336 as T=9, H=2, I=7, S=4, 0=8
+ */
 
-class RandomUniqueEqualizerWeek6 {
 
-    String[] leftSide;
-    String rightSide;
-    HashMap<String, String> mapper = new HashMap<String, String>();
+import java.util.*;
 
-    RandomUniqueEqualizerWeek6(String[] leftSide, String rightSide) {
+// create class
+public class RandomUniqueEqualizerWeek6 {
+    
+    
+    // given letter in the arrays 
+    char alphabets[] = {'t', 'h', 'i', 's', 'o', 'f', 'u', 'n', 'y'};
 
-        this.leftSide = leftSide;
-        this.rightSide = rightSide;
-    }
+    // each value of the letter
+    int aplhaValues[] = {9, 2, 7, 4, 8, 1, 0, 3, 6};
+    
+    
 
-    boolean processor() {
+    // function to find integer value of each letter
+    int getEachValue(char letter){
 
-        String checkval1 = String.join("", leftSide);
-        String checkvalFinal = checkval1 + rightSide;
-        // System.out.println(checkval);
+        // traverse and compare the letter with each alphabet
+        for(int i = 0; i < alphabets.length; i++){
 
-        String uniqueCheck = uniqueFinder(checkvalFinal, checkval1.charAt(checkval1.length() - 1));
+            // compare the tageted letter with each alphabet, if yes return the value of that letter
+            if(letter == alphabets[i]){
 
-        int leftSum = leftItterSum();
-
-        String rightSum = "";
-
-        for (int i = 0; i < rightSide.length(); i++) {
-            rightSum += mapper.get("" + rightSide.charAt(i));
-        }
-
-        // System.out.println(rightSum);
-        // System.out.println(leftSum);
-
-        if (leftSum == Integer.parseInt(rightSum)) {
-            return true;
-        }
-
-        return false;
-
-    }
-
-    int leftItterSum() {
-
-        // int lastCheckIter = 0;
-        int unitsItter = 0;
-        String[] units = new String[leftSide.length];
-        int leftTotal = 0;
-
-        // if(leftSide[lastCheckIter].charAt(i) ==
-        // leftSide[lastCheckIter].charAt(leftSide[lastCheckIter].length())){
-        // unitsItter++;
-        // }
-
-        for (int i = 0; i < leftSide.length; i++) {
-
-            units[unitsItter] = "";
-
-            for (int j = 0; j < leftSide[i].length(); j++) {
-
-                // System.out.println(mapper.get("H"));
-                units[unitsItter] += mapper.get("" + leftSide[i].charAt(j));
-
-            }
-            leftTotal += Integer.parseInt(units[unitsItter]);
-            unitsItter++;
-
-        }
-
-        // System.out.println(units[0]);
-        // System.out.println(units[1]);
-        // System.out.println(units[2]);
-
-        // System.out.println(leftTotal);
-
-        return leftTotal;
-    }
-
-    String uniqueFinder(String a, char leftend) {
-
-        int len = 0;
-        char[] passer = new char[a.length()];
-
-        for (int i = 0; i < a.length(); i++) {
-            boolean push = false;
-            for (int j = 0; j < a.length(); j++) {
-                if (i >= j) {
-                    if (i == a.length() - 1) {
-                        push = true;
-                        break;
-                    }
-                    continue;
-                }
-
-                if (a.charAt(i) == a.charAt(j)) {
-                    push = false;
-                    break;
-                } else if (a.charAt(i) != a.charAt(j)) {
-                    push = true;
-                }
-            }
-            if (push) {
-                passer[len] = a.charAt(i);
-                push = false;
-                len++;
+                // return value of that particular letter
+                return aplhaValues[i];
             }
         }
+        // if not found return 0 which doesnot affect in addition
+        return 0;
+    }
 
-        String combined = "";
-        int itter = 0;
 
-        String[] leftRightSum = new String[2];
+    // function to find the integer value of each word i.e "THIS" --> 9274
+    String getEachWordVal(String word){
 
-        for (int i = 0; i < len; i++) {
-            combined += passer[i];
-            mapper.put("" + passer[i], "" + i);
-            // if (passer[i] == leftend) {
-            // itter++;
-            // }
-            // leftRightSum[itter] += mapper.get("" + passer[i]);
+        // declare a variable to store result of joining each letter of the word
+        String joinLetter = "";
 
+        // declare a variable to store the converted lower letter
+        String lowerLetter;
+
+        // declare a variable to store integer value of each letter
+        int letterVal;
+
+        // declare a variable to store converted letter from integer to string
+        String convertedLetter;
+
+        // traverse the word to get each letter
+        for(int i = 0; i < word.length(); i++){
+
+            // convert each letter into lower case
+            lowerLetter = word.toLowerCase();
+
+            // get int value of each letter
+            letterVal = getEachValue(lowerLetter.charAt(i));
+
+            // convert interger into string
+            convertedLetter = String.valueOf(letterVal);
+
+            // join each letter value instead of adding
+            joinLetter += convertedLetter;
         }
 
-        // System.out.println(combined);
+        // return the vaule of joining letter of each word
+        return joinLetter;
+    }
 
-        return combined;
-        // return leftRightSum;
+    // function to find the value of whole array
+    int calculateSum(String words[]){
+
+        // initilization of a variable to store the additon of each word value
+        int sum = 0;
+
+        // declare a variable to store each value of word in string
+        String wordVal;
+
+        // traverse each word of the array i.e 
+        for(String word: words){
+
+            // System.out.println(word);
+
+            // get each word
+            wordVal = getEachWordVal(word);
+           
+            // add the value of each word
+            sum += Integer.parseInt(wordVal);
+            // System.out.println("TOval Vlaue : " + sum);
+            // sum = 0;
+        }
+
+        // print the sum of the arrays
+        System.out.println("Total sum of the words value : " + sum);
+
+
+        // return the value of adding each word
+        return sum;
 
     }
 
+    // function to check the value of the words and targeted word
+    boolean checkEquality(String resultVal, int wordsVal ){
+
+        // check sum of each value of words and target word is equal or not
+        return String.valueOf(wordsVal).equals(resultVal);
+    }
+
+
+    // main method
     public static void main(String[] args) {
 
-        String[] leftInput = { "THER", "MOL", "NIS" };
+        // create instance of the class
+        RandomUniqueEqualizerWeek6 solution = new RandomUniqueEqualizerWeek6();
 
-        System.out.println(new RandomUniqueEqualizerWeek6(leftInput, "HRLI").processor());
+        // given words
+        String[] words = {"THIS","IS","TOO"};
+
+        // given targetWord
+        String targetWord = "FUNNY";
+        
+        // call the function to find the sum of each word value of the array
+        int wordsVal = solution.calculateSum(words);
+
+        // sum of each letter of th result;
+        String resultVal = solution.getEachWordVal(targetWord);
+
+        // print the sum of the target word
+        System.out.println("Value of the target word : " + resultVal);
+
+
+        // call the function 
+        boolean equalVal = solution.checkEquality(resultVal, wordsVal);
+
+        // print the result
+        System.out.println("Is " + Arrays.toString(words) + " equal to " + targetWord + " : " + equalVal);
+
+
     }
-
 }
