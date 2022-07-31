@@ -1,3 +1,4 @@
+package Week7;
 // Week7
 // An MxN integer array grid is handed to you. At first, there is a deer in the top-left corner 
 // (i.e., grid [0][0]). The deer strives to get to the bottom-right corner of the screen (i.e., 

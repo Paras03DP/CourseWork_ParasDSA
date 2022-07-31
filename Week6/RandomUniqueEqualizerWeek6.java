@@ -1,3 +1,4 @@
+package Week6;
 // Week6
 // you are provided with an array of different words and target words. each character of 
 // word represents different digit from 0 to 9 and each 

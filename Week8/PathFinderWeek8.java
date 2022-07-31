@@ -1,3 +1,4 @@
+package Week8;
 // Week 8
 // You are provided with a m x n grid representing rooms in the house with the following 
 // information:

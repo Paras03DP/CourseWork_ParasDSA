@@ -1,3 +1,4 @@
+package Week5;
 //Week 5
 // you are provided with an array A [] containing set of different words in the form of string 
 // and you are provided with targeted word, 

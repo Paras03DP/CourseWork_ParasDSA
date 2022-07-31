@@ -1,3 +1,4 @@
+package Week2;
 // Week2
 // you are given an array which includes product of subset of array any array 'S' of length l, 
 // Find element of an array S 

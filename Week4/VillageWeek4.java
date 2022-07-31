@@ -1,3 +1,4 @@
+package Week4;
 // Week4
 // In a certain city there are x number of villages represented in an array where a[i] 
 // represents their grade. Each village is assigned grades based on their population count. 

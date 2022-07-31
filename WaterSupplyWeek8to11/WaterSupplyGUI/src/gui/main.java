@@ -315,7 +315,7 @@ public class main extends JFrame {
                 String value = valueTextfield.getText();
                 String cost = costTextfield.getText();
                 try {
-                    FileWriter Writer = new FileWriter("src/GUI/info.txt", true);
+                    FileWriter Writer = new FileWriter("WaterSupplyWeek8to11/WaterSupplyGUI/src/gui/info.txt", true);
                     Writer.write("From: " + from + " To: " + to + "  Distance: " + value +" Km " +"  Info: "+ cost );
                     Writer.write(System.getProperty("line.separator"));
                     Writer.close();
