@@ -209,7 +209,7 @@ class SubsetFinder {
 
     public static void main(String[] args) {
 
-        int[] input = { 10, 10, 5, 0, 2, 1, 1, 5 };
+        int[] input = { 10, 10, 5, 0, 2, 1, 2, 5 };
 
         SubsetFinder sub = new SubsetFinder(3, input);
         sub.resultFinder();
