@@ -29,7 +29,7 @@ public class main extends JFrame {
             "<br>After creating all the Pipe Line, enter \"Source\" Pipe and \"Destination\" Pipe to" +
             "<br>Calculate the Shortest distance between them." +
             "<br><br><i><b>Developed By :<font color=\"blue\"> Paras Ayer</font>" +
-            "<br>Email : <font color=\"blue\"></font></i><b></html>";
+            "<br>Email : <font color=\"blue\">paras.ayer33@gmail.com</font></i><b></html>";
 
 
 
